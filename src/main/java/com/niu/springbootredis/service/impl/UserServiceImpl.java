@@ -8,7 +8,6 @@ import com.niu.springbootredis.mapper.UserMapper;
 import com.niu.springbootredis.model.User;
 import com.niu.springbootredis.model.UserExample;
 import com.niu.springbootredis.service.UserService;
-import com.niu.springbootredis.utils.FastJsonConvertUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -66,7 +65,7 @@ public class UserServiceImpl implements UserService {
     String key = "UserServiceImpl#select#" + userPara.getAge().toString();
     boolean exist = redisClientTemplate.exists(key);
     if (exist) {
-      return FastJsonConvertUtils.convertJSONToArray(redisClientTemplate.get(key), UserVO.class);
+      return redisClientTemplate.getByKey(key);
     }
 
     UserExample example = new UserExample();
@@ -74,14 +73,14 @@ public class UserServiceImpl implements UserService {
     example.createCriteria().andAgeLessThan(userPara.getAge());
 
     List<User> userList = userMapper.selectByExample(example);
-    List<UserVO> result = new ArrayList<>(userList.size());
+    ArrayList<UserVO> result = new ArrayList<>(userList.size());
     userList.forEach(t -> {
       UserVO userVO = new UserVO();
       BeanUtils.copyProperties(t, userVO);
       result.add(userVO);
     });
 
-    redisClientTemplate.setex(key, 30, FastJsonConvertUtils.convertObjectToJSON(result));
+    redisClientTemplate.set(key, result, 30);
 
     return result;
   }

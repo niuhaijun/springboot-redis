@@ -3,6 +3,7 @@ package com.niu.springbootredis.controller.vo;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
@@ -13,7 +14,7 @@ import lombok.Data;
  */
 @Data
 @JsonInclude(value = NON_NULL)
-public class UserVO {
+public class UserVO implements Serializable {
 
   private String uuid;
 
