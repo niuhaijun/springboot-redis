@@ -1,5 +1,6 @@
 package com.niu.springbootredis.config;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -9,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.SerializationUtils;
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
@@ -56,6 +58,7 @@ public class RedisClientTemplate {
     }
     return result;
   }
+
 
   /**
    * 获取单个值
@@ -3023,4 +3026,49 @@ public class RedisClientTemplate {
     }
   }
 
+
+  // ---业务经常使用的功能--- //
+  public void set(String key, Serializable value) {
+
+    this.set(key, value, null);
+  }
+
+  public void set(String key, Serializable value, Integer expireSeconds) {
+
+    ShardedJedis shardedJedis = redisDataSource.getRedisClient();
+    try {
+      shardedJedis.set(key.getBytes(), SerializationUtils.serialize(value));
+      if (expireSeconds != null) {
+        shardedJedis.expire(key.getBytes(), expireSeconds);
+      }
+    } catch (Exception e) {
+      logger.error(e.getMessage(), e);
+    } finally {
+      redisDataSource.returnResource(shardedJedis);
+    }
+  }
+
+  public <T> T getByKey(String key) {
+
+    T result = null;
+    ShardedJedis shardedJedis = redisDataSource.getRedisClient();
+    if (shardedJedis == null) {
+      return result;
+    }
+
+    try {
+      byte[] value = shardedJedis.get(key.getBytes());
+      if (value != null) {
+        return (T) SerializationUtils.deserialize(value);
+      }
+
+      return null;
+    } catch (Exception e) {
+      logger.error(e.getMessage(), e);
+    } finally {
+      redisDataSource.returnResource(shardedJedis);
+    }
+
+    return result;
+  }
 }
