@@ -1,6 +1,8 @@
 package com.niu.springbootredis.service.impl;
 
 
+import static com.niu.springbootredis.utils.ConstantKeys.USER_KEY_PREFIX;
+
 import com.niu.springbootredis.config.RedisClientTemplate;
 import com.niu.springbootredis.controller.param.UserPara;
 import com.niu.springbootredis.controller.vo.UserVO;
@@ -32,6 +34,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public Integer add(UserPara userPara) {
 
+    redisClientTemplate.del(USER_KEY_PREFIX + "" + userPara.toString());
     Date date = new Date();
     userPara.setCreateTime(date);
     userPara.setUpdateTime(date);
@@ -43,6 +46,8 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public Integer update(UserPara userPara) {
+
+    redisClientTemplate.del(USER_KEY_PREFIX + "" + userPara.toString());
 
     userPara.setUpdateTime(new Date());
     User user = new User();
@@ -56,13 +61,16 @@ public class UserServiceImpl implements UserService {
   @Override
   public Integer delete(UserPara userPara) {
 
+    redisClientTemplate.del(USER_KEY_PREFIX + "" + userPara.toString());
+
     return userMapper.deleteByPrimaryKey(userPara.getUuid());
   }
 
   @Override
   public List<UserVO> select(UserPara userPara) {
 
-    String key = "UserServiceImpl#select#" + userPara.getAge().toString();
+    String key = USER_KEY_PREFIX + "" + userPara.toString();
+
     boolean exist = redisClientTemplate.exists(key);
     if (exist) {
       return redisClientTemplate.getByKey(key);
@@ -80,7 +88,7 @@ public class UserServiceImpl implements UserService {
       result.add(userVO);
     });
 
-    redisClientTemplate.set(key, result, 30);
+    redisClientTemplate.set(key, result, 60);
 
     return result;
   }
