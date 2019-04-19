@@ -1,6 +1,6 @@
 spring:
   datasource:
-    name: spring_boot_mybatis
+    name: spring_boot_redis
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/spring_boot_redis?useSSL=FALSE&allowMultiQueries=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
@@ -14,20 +14,6 @@ spring:
     restart:
       enabled: true
       additional-paths: mapper
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    password:
-    timeout: 0
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: -1
-
-
 
 
 mybatis:
@@ -43,3 +29,21 @@ mybatis:
 logging:
   level:
     com.niu.springbootredis.mapper: debug
+
+
+# Redis自动配置有些简陋，深层次的功能需用用到自定义配置
+jedis:
+  # Redis服务器地址
+  host: 127.0.0.1
+  # Redis服务器连接端口
+  port: 6379
+  # 连接池最大连接数（使用负值表示没有限制） 默认 8
+  maxTotal: 8
+  # 连接池中的最大空闲连接 默认 8
+  maxIdle: 8
+  # 连接池中的最小空闲连接 默认 0
+  minIdle: 0
+  # 最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+  maxWaitMillis: -1
+  # ？？？
+  timeout: 1000

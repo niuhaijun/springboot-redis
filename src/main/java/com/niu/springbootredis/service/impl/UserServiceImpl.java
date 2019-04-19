@@ -1,12 +1,14 @@
 package com.niu.springbootredis.service.impl;
 
 
+import com.niu.springbootredis.config.RedisClientTemplate;
 import com.niu.springbootredis.controller.param.UserPara;
 import com.niu.springbootredis.controller.vo.UserVO;
 import com.niu.springbootredis.mapper.UserMapper;
 import com.niu.springbootredis.model.User;
 import com.niu.springbootredis.model.UserExample;
 import com.niu.springbootredis.service.UserService;
+import com.niu.springbootredis.utils.FastJsonConvertUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +26,9 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private UserMapper userMapper;
+
+  @Autowired
+  private RedisClientTemplate redisClientTemplate;
 
   @Override
   public Integer add(UserPara userPara) {
@@ -58,6 +63,12 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<UserVO> select(UserPara userPara) {
 
+    String key = "UserServiceImpl#select#" + userPara.getAge().toString();
+    boolean exist = redisClientTemplate.exists(key);
+    if (exist) {
+      return FastJsonConvertUtils.convertJSONToArray(redisClientTemplate.get(key), UserVO.class);
+    }
+
     UserExample example = new UserExample();
     example.setOrderByClause("update_time desc");
     example.createCriteria().andAgeLessThan(userPara.getAge());
@@ -69,6 +80,8 @@ public class UserServiceImpl implements UserService {
       BeanUtils.copyProperties(t, userVO);
       result.add(userVO);
     });
+
+    redisClientTemplate.setex(key, 30, FastJsonConvertUtils.convertObjectToJSON(result));
 
     return result;
   }
