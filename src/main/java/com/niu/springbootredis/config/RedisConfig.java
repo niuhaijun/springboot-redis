@@ -28,7 +28,7 @@ public class RedisConfig {
   @Bean
   public RedisDataSource redisDataSource() {
 
-    RedisDataSourceImpl redisDataSource = new RedisDataSourceImpl();
+    RedisDataSource redisDataSource = new RedisDataSource();
     redisDataSource.setShardedJedisPool(shardedJedisPool());
     return redisDataSource;
   }
@@ -36,9 +36,13 @@ public class RedisConfig {
   @Bean
   public ShardedJedisPool shardedJedisPool() {
 
-    List<JedisShardInfo> shards = new ArrayList<>();
-    shards.add(
-        new JedisShardInfo(properties.getHost(), properties.getPort(), properties.getTimeout()));
+    List<JedisShardInfo> shards = new ArrayList<JedisShardInfo>() {
+      {
+        add(new JedisShardInfo(properties.getHost(), properties.getPort(),
+            properties.getTimeout()));
+      }
+    };
+
     return new ShardedJedisPool(jedisPoolConfig(), shards);
   }
 
@@ -50,6 +54,7 @@ public class RedisConfig {
     config.setMaxIdle(properties.getMaxIdle());
     config.setMinIdle(properties.getMinIdle());
     config.setMaxWaitMillis(properties.getMaxWaitMillis());
+    config.setTestWhileIdle(true);
     config.setTestOnBorrow(true);
     config.setTestOnReturn(true);
     return config;

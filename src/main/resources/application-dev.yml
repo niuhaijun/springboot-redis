@@ -46,4 +46,4 @@ jedis:
   # 最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
   maxWaitMillis: -1
   # ？？？
-  timeout: 1000
+  timeout: 10000

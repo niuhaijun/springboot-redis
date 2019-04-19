@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
@@ -23,6 +25,8 @@ public class RedisClientTemplate {
    */
   private static final int LOCK_DEFAULT_EXPIRE_TIME = 10 * 60;
 
+  @Getter
+  @Setter
   private RedisDataSource redisDataSource;
 
   public void disconnect() {
@@ -33,10 +37,6 @@ public class RedisClientTemplate {
 
   /**
    * 设置单个值
-   *
-   * @param key
-   * @param value
-   * @return
    */
   public String set(String key, String value) {
 
@@ -46,23 +46,19 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.set(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
   /**
    * 获取单个值
-   *
-   * @param key
-   * @return
    */
   public String get(String key) {
 
@@ -72,18 +68,19 @@ public class RedisClientTemplate {
       return result;
     }
 
-    boolean broken = false;
     try {
       result = shardedJedis.get(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
+  /**
+   * 判断key是否存在
+   */
   public Boolean exists(String key) {
 
     Boolean result = false;
@@ -91,18 +88,20 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.exists(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
+  /**
+   * key对应的value的类型
+   */
   public String type(String key) {
 
     String result = null;
@@ -110,24 +109,20 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.type(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
+
     return result;
   }
 
   /**
-   * 在某段时间后实现
-   *
-   * @param key
-   * @param seconds
-   * @return
+   * 设置key的过期时长
    */
   public Long expire(String key, int seconds) {
 
@@ -136,24 +131,19 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.expire(key, seconds);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
   /**
-   * 在某个时间点失效
-   *
-   * @param key
-   * @param unixTime
-   * @return
+   * 设置key在某个时间点失效
    */
   public Long expireAt(String key, long unixTime) {
 
@@ -162,18 +152,20 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.expireAt(key, unixTime);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
+  /**
+   * 获取key的TTL
+   */
   public Long ttl(String key) {
 
     Long result = null;
@@ -181,14 +173,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.ttl(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -200,14 +192,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.setbit(key, offset, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -219,15 +211,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
 
     try {
       result = shardedJedis.getbit(key, offset);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -239,14 +230,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.setrange(key, offset, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -258,14 +249,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getrange(key, startOffset, endOffset);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -277,14 +268,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getSet(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -296,14 +287,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.setnx(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -315,14 +306,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.setex(key, seconds, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -334,14 +325,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.decrBy(key, integer);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -353,14 +344,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.decr(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -372,14 +363,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.incrBy(key, integer);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -391,14 +382,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.incr(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -410,14 +401,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.append(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -429,14 +420,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.substr(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -448,14 +439,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hset(key, field, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -467,14 +458,12 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
     try {
       result = shardedJedis.hget(key, field);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -486,14 +475,12 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
     try {
       result = shardedJedis.hsetnx(key, field, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -505,14 +492,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hmset(key, hash);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -524,14 +511,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hmget(key, fields);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -543,14 +530,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hincrBy(key, field, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -562,14 +549,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hexists(key, field);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -581,14 +568,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.del(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -600,14 +587,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hdel(key, field);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -619,14 +606,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hlen(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -638,14 +625,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hkeys(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -657,14 +644,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hvals(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -676,14 +663,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.hgetAll(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -696,14 +683,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.rpush(key, string);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -715,14 +702,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lpush(key, string);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -734,14 +721,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.llen(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -753,14 +740,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lrange(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -772,14 +759,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.ltrim(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -791,14 +778,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lindex(key, index);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -810,14 +797,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lset(key, index, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -829,14 +816,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lrem(key, count, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -848,14 +835,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.lpop(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -867,14 +854,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.rpop(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -888,14 +875,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.sadd(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -907,14 +894,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.smembers(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -927,14 +914,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.srem(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -946,14 +933,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.spop(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -965,14 +952,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.scard(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -984,14 +971,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.sismember(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1003,14 +990,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.srandmember(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1022,14 +1009,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.zadd(key, score, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1041,14 +1028,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.zrange(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1060,14 +1047,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.zrem(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1079,15 +1066,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zincrby(key, score, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1099,15 +1086,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrank(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1119,15 +1106,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrank(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1139,15 +1126,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrange(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1159,15 +1146,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrangeWithScores(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1179,15 +1166,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrangeWithScores(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1199,15 +1186,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zcard(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1219,15 +1206,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zscore(key, member);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1239,15 +1226,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.sort(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1259,15 +1246,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.sort(key, sortingParameters);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1279,15 +1266,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zcount(key, min, max);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1299,15 +1286,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrangeByScore(key, min, max);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1319,15 +1306,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrangeByScore(key, max, min);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1339,15 +1326,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrangeByScore(key, min, max, offset, count);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1359,15 +1346,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrangeByScore(key, max, min, offset, count);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1379,15 +1366,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrangeByScoreWithScores(key, min, max);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1399,15 +1386,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrangeByScoreWithScores(key, max, min);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1420,15 +1407,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrangeByScoreWithScores(key, min, max, offset, count);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1441,15 +1428,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zrevrangeByScoreWithScores(key, max, min, offset, count);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1461,15 +1448,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zremrangeByRank(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1481,15 +1468,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.zremrangeByScore(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1501,15 +1488,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.linsert(key, where, pivot, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1521,15 +1508,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.set(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1541,15 +1528,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.get(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1561,15 +1548,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.exists(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1581,15 +1566,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.type(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1601,15 +1584,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.expire(key, seconds);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1621,15 +1602,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.expireAt(key, unixTime);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1641,15 +1620,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.ttl(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1661,15 +1638,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.getSet(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1681,15 +1656,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.setnx(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1701,15 +1676,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.setex(key, seconds, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1721,15 +1696,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.decrBy(key, integer);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1741,15 +1716,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.decr(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1761,15 +1736,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.incrBy(key, integer);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1781,15 +1756,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.incr(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1801,15 +1776,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.append(key, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1821,15 +1796,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.substr(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1841,15 +1814,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hset(key, field, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1861,15 +1832,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hget(key, field);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1881,16 +1850,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hsetnx(key, field, value);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1902,16 +1868,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hmset(key, hash);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1923,16 +1886,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hmget(key, fields);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1944,16 +1906,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hincrBy(key, field, value);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1965,16 +1926,14 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.hexists(key, field);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -1986,16 +1945,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hdel(key, field);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2007,16 +1963,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hlen(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2028,16 +1981,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hkeys(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2049,16 +1999,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hvals(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2070,16 +2017,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.hgetAll(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2091,16 +2035,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.rpush(key, string);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2112,16 +2056,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lpush(key, string);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2133,16 +2077,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.llen(key);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2154,16 +2098,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lrange(key, start, end);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2175,15 +2119,15 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.ltrim(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2195,16 +2139,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lindex(key, index);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2216,16 +2160,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lset(key, index, value);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2237,16 +2181,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lrem(key, count, value);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2258,16 +2202,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.lpop(key);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2279,16 +2223,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.rpop(key);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2300,16 +2244,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.sadd(key, member);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2321,16 +2265,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.smembers(key);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2342,16 +2286,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.srem(key, member);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2363,16 +2307,16 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
 
       result = shardedJedis.spop(key);
     } catch (Exception e) {
 
       logger.error(e.getMessage(), e);
-      broken = true;
+
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2384,16 +2328,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.scard(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2405,16 +2346,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.sismember(key, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2426,16 +2364,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.srandmember(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2447,16 +2382,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zadd(key, score, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2468,16 +2400,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrange(key, start, end);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2489,16 +2418,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrem(key, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2510,16 +2436,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zincrby(key, score, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2531,16 +2454,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrank(key, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2552,16 +2472,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrank(key, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2573,16 +2490,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrange(key, start, end);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2594,16 +2508,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrangeWithScores(key, start, end);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2615,16 +2526,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrangeWithScores(key, start, end);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2636,16 +2544,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zcard(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2657,16 +2562,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zscore(key, member);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2678,16 +2580,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.sort(key);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2699,16 +2598,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.sort(key, sortingParameters);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2720,16 +2616,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zcount(key, min, max);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2741,16 +2634,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrangeByScore(key, min, max);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2762,16 +2652,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrangeByScore(key, min, max, offset, count);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2783,16 +2670,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrangeByScoreWithScores(key, min, max);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2805,16 +2689,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrangeByScoreWithScores(key, min, max, offset, count);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2826,16 +2707,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrangeByScore(key, max, min);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2847,16 +2725,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrangeByScore(key, max, min, offset, count);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2868,16 +2743,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrangeByScoreWithScores(key, max, min);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2890,16 +2762,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zrevrangeByScoreWithScores(key, max, min, offset, count);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2911,16 +2780,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zremrangeByRank(key, start, end);
     } catch (Exception e) {
-
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2932,15 +2798,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.zremrangeByScore(key, start, end);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2952,15 +2816,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
-    try {
 
+    try {
       result = shardedJedis.linsert(key, where, pivot, value);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2972,14 +2834,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getShard(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -2991,14 +2852,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getShard(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -3010,14 +2870,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getShardInfo(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -3029,14 +2888,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getShardInfo(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -3048,14 +2906,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getKeyTag(key);
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -3067,14 +2924,13 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getAllShardInfo();
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
@@ -3086,47 +2942,64 @@ public class RedisClientTemplate {
     if (shardedJedis == null) {
       return result;
     }
-    boolean broken = false;
+
     try {
       result = shardedJedis.getAllShards();
     } catch (Exception e) {
       logger.error(e.getMessage(), e);
-      broken = true;
     } finally {
-      redisDataSource.returnResource(shardedJedis, broken);
+      redisDataSource.returnResource(shardedJedis);
     }
     return result;
   }
 
-  public RedisDataSource getRedisDataSource() {
-
-    return redisDataSource;
-  }
-
-  public void setRedisDataSource(RedisDataSource redisDataSource) {
-
-    this.redisDataSource = redisDataSource;
-  }
-
   /**
+   * 获取分布式锁
    *
-   * @title: lock
-   * @description: 获取分布式锁
-   * @param lockKey
-   * @param timeOut
-   * @return
-   * @return boolean 返回类型
-   * @throws
+   * 获取分布式锁，并设置过期时间（两个命令）
    */
   public boolean lock(String lockKey, long timeOut) {
 
     ShardedJedis shardedJedis = redisDataSource.getRedisClient();
     try {
       long nowTime = new Date().getTime();
-      do {//进程亦可以在一个循环中不断地尝试 SETNX 操作,以获得锁
+
+      /**
+       * 进程亦可以在一个循环中不断地尝试 SETNX 操作,以获得锁
+       */
+      do {
         Long result = shardedJedis.setnx(lockKey, lockKey);
         if (result == 1) {
           shardedJedis.expire(lockKey, RedisClientTemplate.LOCK_DEFAULT_EXPIRE_TIME);
+          return true;
+        } else {
+          logger.info("get lock by key:{}, fail!", lockKey);
+        }
+      } while ((System.currentTimeMillis() - nowTime) < (timeOut * 1000));
+    } finally {
+      redisDataSource.returnResource(shardedJedis);
+    }
+    return false;
+  }
+
+  /**
+   * 获取分布式锁
+   *
+   * 获取分布式锁，并设置过期时间（原子命令）
+   */
+  public boolean bestLock(String lockKey, long timeOut) {
+
+    ShardedJedis shardedJedis = redisDataSource.getRedisClient();
+    try {
+      long nowTime = new Date().getTime();
+
+      /**
+       * 进程亦可以在一个循环中不断地尝试 SETEX 操作,以获得锁
+       */
+      do {
+        String result = shardedJedis
+            .setex(lockKey, RedisClientTemplate.LOCK_DEFAULT_EXPIRE_TIME, lockKey);
+        if ("OK".equals(result)) {
           return true;
         } else {
           logger.info("get lock by key:{}, fail!", lockKey);
