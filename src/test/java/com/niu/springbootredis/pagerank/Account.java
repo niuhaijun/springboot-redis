@@ -3,6 +3,7 @@ package com.niu.springbootredis.pagerank;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author: niuhaijun
@@ -11,6 +12,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Account {
 
   // 名次

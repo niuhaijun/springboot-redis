@@ -43,7 +43,8 @@ public class PageTest {
     list.add(new Account(null, "8", BigDecimal.valueOf(8), 1l));// 1
     list.add(new Account(null, "9", BigDecimal.valueOf(9), 1l));// 0
 
-    String key = "paihangbang";
+    String key = "ppcoin:paihangbang";
+    String addressPre = key + ":address:";
 
     redisClientTemplate.del(key);
 
@@ -55,10 +56,14 @@ public class PageTest {
     int start = (pageNo - 1) * pageSize;
     int end = pageNo * pageSize - 1;
 
-    // zadd key score member
+    /**
+     * zadd key score member
+     *
+     * 初始化数据
+     */
     for (Account account : list) {
-      redisClientTemplate
-          .zadd(key, account.getBalance().doubleValue(), JSONObject.toJSONString(account));
+      redisClientTemplate.zadd(key, account.getBalance().doubleValue(), account.getAddress());
+      redisClientTemplate.set(addressPre + "" + account.getAddress(), "" + account.getTxCount());
     }
 
     System.out.println("分页查询， 逆序" + "start = " + start + "  end = " + end);
@@ -67,11 +72,19 @@ public class PageTest {
     Set<Tuple> set = redisClientTemplate.zrevrangeWithScores(key, start, end);
     for (Tuple tuple : set) {
       String member = tuple.getElement();
-      Account account = JSONObject.parseObject(member, Account.class);
 
       // zrevrank key member 获取逆序排名， 从0开始
-      account.setRank(redisClientTemplate.zrevrank(key, member));
-      account.setBalance(BigDecimal.valueOf(tuple.getScore()));
+      Long rank = redisClientTemplate.zrevrank(key, member) + 1;
+      String address = tuple.getElement();
+      double balance = tuple.getScore();
+      String txCount = redisClientTemplate.get(addressPre + address);
+
+      Account account = new Account();
+      account.setRank(rank);
+      account.setAddress(address);
+      account.setBalance(BigDecimal.valueOf(balance));
+      account.setTxCount(Long.valueOf(txCount));
+
       System.out.println(JSONObject.toJSONString(account));
     }
   }
