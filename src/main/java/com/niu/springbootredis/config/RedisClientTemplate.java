@@ -59,7 +59,6 @@ public class RedisClientTemplate {
     return result;
   }
 
-
   /**
    * 获取单个值
    */
@@ -177,7 +176,7 @@ public class RedisClientTemplate {
   }
 
   /**
-   * 获取key的TTL
+   * 返回key的剩余时间,单位是秒
    */
   public Long ttl(String key) {
 
@@ -200,6 +199,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * key所储存的字符串值，设置或清除指定偏移量上的位(bit)。
+   */
   public boolean setbit(String key, long offset, boolean value) {
 
     ShardedJedis shardedJedis = redisDataSource.getRedisClient();
@@ -221,6 +223,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * 对 key 所储存的字符串值，获取指定偏移量上的位(bit)。
+   */
   public boolean getbit(String key, long offset) {
 
     ShardedJedis shardedJedis = redisDataSource.getRedisClient();
@@ -242,6 +247,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * 用指定的字符串覆盖给定 key 所储存的字符串值，覆盖的位置从偏移量 offset 开始。
+   */
   public long setrange(String key, long offset, String value) {
 
     ShardedJedis shardedJedis = redisDataSource.getRedisClient();
@@ -263,6 +271,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * 获取存储在指定 key 中字符串的子字符串。字符串的截取范围由 start 和 end 两个偏移量决定(包括 start 和 end 在内)。
+s   */
   public String getrange(String key, long startOffset, long endOffset) {
 
     ShardedJedis shardedJedis = redisDataSource.getRedisClient();
@@ -284,6 +295,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * 设置指定 key 的值，并返回 key 旧的值。
+   */
   public String getSet(String key, String value) {
 
     String result = null;
@@ -305,6 +319,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * Redis Setnx（SET if Not eXists） 命令在指定的 key 不存在时，为 key 设置指定的值。
+   */
   public Long setnx(String key, String value) {
 
     Long result = null;
@@ -326,6 +343,9 @@ public class RedisClientTemplate {
     return result;
   }
 
+  /**
+   * Redis Setex 命令为指定的 key 设置值及其过期时间。如果 key 已经存在， SETEX 命令将会替换旧的值。
+   */
   public String setex(String key, int seconds, String value) {
 
     String result = null;
