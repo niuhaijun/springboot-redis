@@ -2,14 +2,14 @@ package com.niu.springbootredis.config;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
 
+@Slf4j
 public class RedisDataSource {
-
-  private static final Logger logger = LoggerFactory.getLogger(RedisDataSource.class);
 
   @Getter
   @Setter
@@ -19,8 +19,9 @@ public class RedisDataSource {
 
     try {
       return shardedJedisPool.getResource();
-    } catch (Exception e) {
-      logger.error("getRedisClient error", e);
+    }
+    catch (Exception e) {
+      log.error("getRedisClient error, {}", e.getMessage());
     }
     return null;
   }
