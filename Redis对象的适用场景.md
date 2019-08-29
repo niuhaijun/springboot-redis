@@ -36,7 +36,7 @@
     * zadd、zrem
     * zrange、zrevrange
     * zrank、zrevrank
-    * zcard、zcount
+    * zcard、zcount、zscore
     * [zset命令文档](https://www.redis.net.cn/order/3609.html)
 * hash 
   * 存储需要部分变更的数据结构，如用户信息等
