@@ -1,5 +1,3 @@
-# SpringBoot整合Redis
-
 ## 1、Redis中的5中对象类型
 * string 字符串
 * list 列表
