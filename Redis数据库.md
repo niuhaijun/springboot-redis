@@ -8,3 +8,4 @@
 * 设置key的生存时间：`expire`，`pexpire`
 * 设置key的过期时间：`expireat`，`pexpireat`
 * 获取key的剩余生存时间：`ttl`，`pttl`
+---
