@@ -27,9 +27,9 @@ mybatis:
   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
-logging:
-  level:
-    com.niu.springbootredis.mapper: debug
+#logging:
+#  level:
+#    com.niu.springbootredis.mapper: debug
 
 
 # Redis自动配置有些简陋，深层次的功能需用用到自定义配置

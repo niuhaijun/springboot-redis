@@ -1,0 +1,1825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ea2e154-91e5-4f25-9723-cbefbf546041" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Farmer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Programmer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/WeatherServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Worker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/PubsubTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/发布与订阅.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisClientTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisClientTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/PubsubTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageRankTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <toolWindowEditorPreview>false</toolWindowEditorPreview>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>redisAutoConfig</find>
+      <find>redis</find>
+      <find>int db</find>
+      <find>returnResource</find>
+      <find>broken</find>
+      <find>redisDataSource.returnResource(shardedJedis, broken);</find>
+      <find>SETEX</find>
+      <find>zrevrange</find>
+      <find>zadd</find>
+      <find>Subscription ended.</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/banner.txt" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/mybatisGenerator.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/controller/param/UserPara.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/SpringbootRedisApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/JedisProperties.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/utils/FastJsonConvert.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/utils/FastJsonConvertUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisCacheClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisDataSourceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/controller/vo/UserVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/utils/ConstantKeys.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisDataSource.java" />
+        <option value="$PROJECT_DIR$/Redis对象的适用场景.md" />
+        <option value="$PROJECT_DIR$/字典数据结构.md" />
+        <option value="$PROJECT_DIR$/Redis数据库.md" />
+        <option value="$PROJECT_DIR$/过期键的删除策略.md" />
+        <option value="$PROJECT_DIR$/过期键与持久化.md" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageRankTest.java" />
+        <option value="$PROJECT_DIR$/发布与订阅.md" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Subscriber.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Farmer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Programmer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Worker.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/WeatherServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Programmer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Farmer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Worker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisClientTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/WeatherServer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/PubsubTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../installdir/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../projects/mvn-conf/conf/default_settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="springboot-redis" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="springboot-redis" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="836" />
+    <option name="y" value="219" />
+    <option name="width" value="1701" />
+    <option name="height" value="832" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <hideEmptyPackages ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootredis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootredis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootredis" type="462c0819:PsiDirectoryNode" />
+              <item name="pagerank" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-redis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-redis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootredis" type="462c0819:PsiDirectoryNode" />
+              <item name="pubsub" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Markdown" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.niu.springbootredis.config" />
+      <recent name="com.niu.springbootredis.controller" />
+      <recent name="com.niu.springbootredis.service.impl" />
+      <recent name="com.niu.springbootredis.service" />
+      <recent name="com.niu.springbootredis.controller.vo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub" />
+      <recent name="$PROJECT_DIR$/src/main/resources/SQL" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.PageRankTest">
+    <configuration name="PageRankTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niu.springbootredis.pagerank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niu.springbootredis.pagerank" />
+      <option name="MAIN_CLASS_NAME" value="com.niu.springbootredis.pagerank.PageRankTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageRankTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niu.springbootredis.pagerank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niu.springbootredis.pagerank" />
+      <option name="MAIN_CLASS_NAME" value="com.niu.springbootredis.pagerank.PageRankTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PubsubTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niu.springbootredis.pubsub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niu.springbootredis.pubsub" />
+      <option name="MAIN_CLASS_NAME" value="com.niu.springbootredis.pubsub.PubsubTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-redis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niu.springbootredis.SpringbootRedisApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PageRankTest" />
+        <item itemvalue="JUnit.PubsubTest" />
+        <item itemvalue="JUnit.PageRankTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ea2e154-91e5-4f25-9723-cbefbf546041" name="Default Changelist" comment="" />
+      <created>1555587770336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555587770336</updated>
+      <workItem from="1555587773398" duration="4123000" />
+      <workItem from="1555592451050" duration="327000" />
+      <workItem from="1555641020002" duration="6323000" />
+      <workItem from="1555653996579" duration="2287000" />
+      <workItem from="1555658209766" duration="5745000" />
+      <workItem from="1555664281640" duration="1221000" />
+      <workItem from="1555771498878" duration="27000" />
+      <workItem from="1555859963878" duration="33000" />
+      <workItem from="1556104650673" duration="20000" />
+      <workItem from="1556432794396" duration="184000" />
+      <workItem from="1556433499858" duration="9000" />
+      <workItem from="1563078874663" duration="79000" />
+      <workItem from="1566656000859" duration="2566000" />
+      <workItem from="1566720067094" duration="2237000" />
+      <workItem from="1566971663960" duration="15542000" />
+      <workItem from="1567076257422" duration="1874000" />
+      <workItem from="1567132351684" duration="2056000" />
+      <workItem from="1567159191582" duration="1735000" />
+      <workItem from="1567216763180" duration="137000" />
+      <workItem from="1567216978049" duration="21585000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="PageTest_test - 2019.08.25 at 16h 11m 26s.xml">
+      <configuration name="PageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest_test - 2019.08.25 at 16h 13m 00s.xml">
+      <configuration name="PageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest_test - 2019.08.25 at 16h 14m 37s.xml">
+      <configuration name="PageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageRankTest_test - 2019.08.31 at 19h 33m 28s.xml">
+      <configuration name="PageRankTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageRankTest_test - 2019.08.31 at 19h 35m 42s.xml">
+      <configuration name="PageRankTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageRankTest_test - 2019.08.31 at 19h 42m 59s.xml">
+      <configuration name="PageRankTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PubsubTest - 2019.08.31 at 21h 18m 15s.xml">
+      <configuration name="PubsubTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PubsubTest - 2019.08.31 at 21h 21m 41s.xml">
+      <configuration name="PubsubTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PubsubTest - 2019.08.31 at 21h 23m 24s.xml">
+      <configuration name="PubsubTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PubsubTest - 2019.08.31 at 21h 25m 01s.xml">
+      <configuration name="PubsubTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="68110000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1366" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23883572" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827586" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5003984" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.61035854" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
+      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.43967432" />
+      <window_info anchor="bottom" id="Docker" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Problems" order="14" weight="0.32996973" />
+      <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.32876712" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
+      <window_info anchor="bottom" id="Version Control" order="17" />
+      <window_info anchor="bottom" id="MyBatis Log" order="18" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32976446" />
+      <window_info anchor="right" id="Codota" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Key Promoter X" order="6" />
+      <window_info anchor="right" id="RestServices" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3442184" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827586" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32996973" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48828608" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
+      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Problems" order="14" weight="0.32996973" />
+      <window_info anchor="bottom" id="Java Enterprise" order="15" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
+      <window_info anchor="bottom" id="Version Control" order="17" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32976446" />
+      <window_info anchor="right" id="Codota" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Key Promoter X" order="6" />
+      <window_info anchor="right" id="RestServices" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="JSONObject.toJSONString(result)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>JSONObject.toJSONString(result)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/utils/ConstantKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/controller/vo/UserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2356">
+          <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="110" column="7" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/util/Sharded.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisShardInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="95" column="54" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
+          <folding>
+            <element signature="e#765#1215#0" />
+            <element signature="e#906#1133#1" />
+            <element signature="e#1139#1211#1" />
+            <element signature="e#1219#1912#0" />
+            <element signature="e#1465#1830#1" />
+            <element signature="e#1836#1908#1" />
+            <element signature="e#2100#2226#0" />
+            <element signature="e#2230#2520#0" />
+            <element signature="e#2625#2740#0" />
+            <element signature="e#2744#3023#0" />
+            <element signature="e#3158#3303#0" />
+            <element signature="e#3307#3622#0" />
+            <element signature="e#3626#3788#0" />
+            <element signature="e#3792#3987#0" />
+            <element signature="e#3991#4429#0" />
+            <element signature="e#4680#4962#0" />
+            <element signature="e#4966#5485#0" />
+            <element signature="e#5489#5730#0" />
+            <element signature="e#5734#6014#0" />
+            <element signature="e#6018#6535#0" />
+            <element signature="e#6539#6996#0" />
+            <element signature="e#6645#6781#1" />
+            <element signature="e#7000#7694#0" />
+            <element signature="e#7211#7347#1" />
+            <element signature="e#8082#8191#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9861">
+          <caret line="551" selection-start-line="551" selection-end-line="551" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Tuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="68" column="15" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="15" />
+          <folding>
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="156" column="7" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#UserServiceImpl#0" />
+            <element signature="method#add#0;class#UserServiceImpl#0" />
+            <element signature="method#delete#0;class#UserServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="docComment;class#UserController#0" />
+            <element signature="method#select#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="177" column="2" selection-start-line="177" selection-start-column="2" selection-end-line="177" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/spring_boot_redis_user.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/SpringbootRedisApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/JedisProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/BinaryShardedJedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE-sources.jar!/org/springframework/util/SerializationUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar!/org/slf4j/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="656" column="16" selection-start-line="656" selection-start-column="16" selection-end-line="656" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="method#jedisPoolConfig#0;class#RedisConfig#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/ShardedJedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/io/Closeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springboot-redis.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/对象的适用场景.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-248" />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数据库.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="209">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/过期键的删除策略.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="171">
+            <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/过期键与持久化.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="229">
+            <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/字典数据结构.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="513">
+            <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/发布与订阅">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/发布与订阅.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="69">
+            <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Subscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/WeatherServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Programmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Farmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/PubsubTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Farmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/Programmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/config/RedisClientTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="3178" column="3" lean-forward="true" selection-start-line="3178" selection-start-column="3" selection-end-line="3178" selection-end-column="3" />
+          <folding>
+            <element signature="e#614#640#0" />
+            <element signature="e#707#714#0" />
+            <element signature="e#771#899#0" />
+            <element signature="e#903#923#0" />
+            <element signature="e#1096#1124#1" />
+            <element signature="e#1134#1186#0" />
+            <element signature="e#1211#1254#0" />
+            <element signature="e#1267#1326#0" />
+            <element signature="e#1353#1373#0" />
+            <element signature="e#1353#1777#0" />
+            <element signature="e#1531#1559#1" />
+            <element signature="e#1569#1614#0" />
+            <element signature="e#1639#1682#0" />
+            <element signature="e#1695#1754#0" />
+            <element signature="e#1781#1805#0" />
+            <element signature="e#1781#2218#0" />
+            <element signature="e#1969#1997#1" />
+            <element signature="e#2007#2055#0" />
+            <element signature="e#2080#2123#0" />
+            <element signature="e#2136#2195#0" />
+            <element signature="e#2222#2251#0" />
+            <element signature="e#2222#2658#0" />
+            <element signature="e#2410#2438#1" />
+            <element signature="e#2448#2494#0" />
+            <element signature="e#2519#2562#0" />
+            <element signature="e#2575#2634#0" />
+            <element signature="e#2662#2687#0" />
+            <element signature="e#2662#3115#0" />
+            <element signature="e#2857#2885#1" />
+            <element signature="e#2895#2952#0" />
+            <element signature="e#2977#3020#0" />
+            <element signature="e#3033#3092#0" />
+            <element signature="e#3119#3147#0" />
+            <element signature="e#3119#3582#0" />
+            <element signature="e#3321#3349#1" />
+            <element signature="e#3359#3419#0" />
+            <element signature="e#3444#3487#0" />
+            <element signature="e#3500#3559#0" />
+            <element signature="e#3586#3616#0" />
+            <element signature="e#3586#4017#0" />
+            <element signature="e#3770#3798#1" />
+            <element signature="e#3808#3853#0" />
+            <element signature="e#3878#3922#0" />
+            <element signature="e#3935#3994#0" />
+            <element signature="e#4021#4067#0" />
+            <element signature="e#4021#4524#0" />
+            <element signature="e#4259#4287#1" />
+            <element signature="e#4297#4360#0" />
+            <element signature="e#4385#4429#0" />
+            <element signature="e#4442#4501#0" />
+            <element signature="e#4528#4574#0" />
+            <element signature="e#4528#5009#0" />
+            <element signature="e#4751#4779#1" />
+            <element signature="e#4789#4845#0" />
+            <element signature="e#4870#4914#0" />
+            <element signature="e#4927#4986#0" />
+            <element signature="e#5013#5073#0" />
+            <element signature="e#5013#5523#0" />
+            <element signature="e#5256#5284#1" />
+            <element signature="e#5294#5359#0" />
+            <element signature="e#5384#5428#0" />
+            <element signature="e#5441#5500#0" />
+            <element signature="e#5527#5614#0" />
+            <element signature="e#5527#6087#0" />
+            <element signature="e#5811#5839#1" />
+            <element signature="e#5849#5923#0" />
+            <element signature="e#5948#5992#0" />
+            <element signature="e#6005#6064#0" />
+            <element signature="e#6091#6130#0" />
+            <element signature="e#6091#6562#0" />
+            <element signature="e#6305#6333#1" />
+            <element signature="e#6343#6398#0" />
+            <element signature="e#6423#6467#0" />
+            <element signature="e#6480#6539#0" />
+            <element signature="e#6566#6641#0" />
+            <element signature="e#6566#7067#0" />
+            <element signature="e#6811#6839#1" />
+            <element signature="e#6849#6903#0" />
+            <element signature="e#6928#6972#0" />
+            <element signature="e#6985#7044#0" />
+            <element signature="e#7071#7148#0" />
+            <element signature="e#7071#7600#0" />
+            <element signature="e#7335#7363#1" />
+            <element signature="e#7373#7436#0" />
+            <element signature="e#7461#7505#0" />
+            <element signature="e#7518#7577#0" />
+            <element signature="e#7604#8031#0" />
+            <element signature="e#7772#7800#1" />
+            <element signature="e#7810#7867#0" />
+            <element signature="e#7892#7936#0" />
+            <element signature="e#7949#8008#0" />
+            <element signature="e#8035#8435#0" />
+            <element signature="e#8187#8215#1" />
+            <element signature="e#8225#8271#0" />
+            <element signature="e#8296#8340#0" />
+            <element signature="e#8353#8412#0" />
+            <element signature="e#8439#8866#0" />
+            <element signature="e#8607#8635#1" />
+            <element signature="e#8645#8702#0" />
+            <element signature="e#8727#8771#0" />
+            <element signature="e#8784#8843#0" />
+            <element signature="e#8870#9270#0" />
+            <element signature="e#9022#9050#1" />
+            <element signature="e#9060#9106#0" />
+            <element signature="e#9131#9175#0" />
+            <element signature="e#9188#9247#0" />
+            <element signature="e#9274#9699#0" />
+            <element signature="e#9442#9470#1" />
+            <element signature="e#9480#9535#0" />
+            <element signature="e#9560#9604#0" />
+            <element signature="e#9617#9676#0" />
+            <element signature="e#9703#10143#0" />
+            <element signature="e#9881#9909#1" />
+            <element signature="e#9919#9979#0" />
+            <element signature="e#10004#10048#0" />
+            <element signature="e#10061#10120#0" />
+            <element signature="e#10147#10589#0" />
+            <element signature="e#10327#10355#1" />
+            <element signature="e#10365#10425#0" />
+            <element signature="e#10450#10494#0" />
+            <element signature="e#10507#10566#0" />
+            <element signature="e#10593#11016#0" />
+            <element signature="e#10763#10791#1" />
+            <element signature="e#10800#10853#0" />
+            <element signature="e#10878#10921#0" />
+            <element signature="e#10934#10993#0" />
+            <element signature="e#11020#11464#0" />
+            <element signature="e#11202#11230#1" />
+            <element signature="e#11239#11301#0" />
+            <element signature="e#11326#11369#0" />
+            <element signature="e#11382#11441#0" />
+            <element signature="e#11468#11906#0" />
+            <element signature="e#11651#11679#1" />
+            <element signature="e#11689#11742#0" />
+            <element signature="e#11767#11811#0" />
+            <element signature="e#11824#11883#0" />
+            <element signature="e#11910#12354#0" />
+            <element signature="e#12097#12125#1" />
+            <element signature="e#12135#12190#0" />
+            <element signature="e#12215#12259#0" />
+            <element signature="e#12272#12331#0" />
+            <element signature="e#12358#12804#0" />
+            <element signature="e#12539#12567#1" />
+            <element signature="e#12577#12640#0" />
+            <element signature="e#12665#12709#0" />
+            <element signature="e#12722#12781#0" />
+            <element signature="e#12808#13242#0" />
+            <element signature="e#12984#13012#1" />
+            <element signature="e#13022#13078#0" />
+            <element signature="e#13103#13147#0" />
+            <element signature="e#13160#13219#0" />
+            <element signature="e#13246#13644#0" />
+            <element signature="e#13397#13425#1" />
+            <element signature="e#13435#13480#0" />
+            <element signature="e#13505#13549#0" />
+            <element signature="e#13562#13621#0" />
+            <element signature="e#13648#14069#0" />
+            <element signature="e#13814#13842#1" />
+            <element signature="e#13852#13905#0" />
+            <element signature="e#13930#13974#0" />
+            <element signature="e#13987#14046#0" />
+            <element signature="e#14073#14473#0" />
+            <element signature="e#14225#14253#1" />
+            <element signature="e#14263#14309#0" />
+            <element signature="e#14334#14378#0" />
+            <element signature="e#14391#14450#0" />
+            <element signature="e#14477#14893#0" />
+            <element signature="e#14644#14672#1" />
+            <element signature="e#14682#14729#0" />
+            <element signature="e#14754#14798#0" />
+            <element signature="e#14811#14870#0" />
+            <element signature="e#14897#15315#0" />
+            <element signature="e#15066#15094#1" />
+            <element signature="e#15104#15151#0" />
+            <element signature="e#15176#15220#0" />
+            <element signature="e#15233#15292#0" />
+            <element signature="e#15319#15755#0" />
+            <element signature="e#15504#15532#1" />
+            <element signature="e#15542#15591#0" />
+            <element signature="e#15616#15660#0" />
+            <element signature="e#15673#15732#0" />
+            <element signature="e#15759#16262#0" />
+            <element signature="e#16005#16033#1" />
+            <element signature="e#16043#16098#0" />
+            <element signature="e#16123#16167#0" />
+            <element signature="e#16180#16239#0" />
+            <element signature="e#16266#16691#0" />
+            <element signature="e#16434#16462#1" />
+            <element signature="e#16472#16527#0" />
+            <element signature="e#16552#16596#0" />
+            <element signature="e#16609#16668#0" />
+            <element signature="e#16695#17095#0" />
+            <element signature="e#16847#16875#1" />
+            <element signature="e#16885#16931#0" />
+            <element signature="e#16956#17000#0" />
+            <element signature="e#17013#17072#0" />
+            <element signature="e#17099#17553#0" />
+            <element signature="e#17291#17319#1" />
+            <element signature="e#17329#17389#0" />
+            <element signature="e#17414#17458#0" />
+            <element signature="e#17471#17530#0" />
+            <element signature="e#17557#17997#0" />
+            <element signature="e#17736#17764#1" />
+            <element signature="e#17774#17833#0" />
+            <element signature="e#17858#17902#0" />
+            <element signature="e#17915#17974#0" />
+            <element signature="e#18001#18428#0" />
+            <element signature="e#18171#18199#1" />
+            <element signature="e#18209#18264#0" />
+            <element signature="e#18289#18333#0" />
+            <element signature="e#18346#18405#0" />
+            <element signature="e#18432#18876#0" />
+            <element signature="e#18614#18642#1" />
+            <element signature="e#18652#18712#0" />
+            <element signature="e#18737#18781#0" />
+            <element signature="e#18794#18853#0" />
+            <element signature="e#18880#19320#0" />
+            <element signature="e#19058#19086#1" />
+            <element signature="e#19096#19156#0" />
+            <element signature="e#19181#19225#0" />
+            <element signature="e#19238#19297#0" />
+            <element signature="e#19324#19728#0" />
+            <element signature="e#19480#19508#1" />
+            <element signature="e#19518#19564#0" />
+            <element signature="e#19589#19633#0" />
+            <element signature="e#19646#19705#0" />
+            <element signature="e#19732#20136#0" />
+            <element signature="e#19888#19916#1" />
+            <element signature="e#19926#19972#0" />
+            <element signature="e#19997#20041#0" />
+            <element signature="e#20054#20113#0" />
+            <element signature="e#20140#20175#0" />
+            <element signature="e#20140#20633#0" />
+            <element signature="e#20377#20405#1" />
+            <element signature="e#20415#20469#0" />
+            <element signature="e#20494#20538#0" />
+            <element signature="e#20551#20610#0" />
+            <element signature="e#20637#21059#0" />
+            <element signature="e#20807#20835#1" />
+            <element signature="e#20845#20895#0" />
+            <element signature="e#20920#20964#0" />
+            <element signature="e#20977#21036#0" />
+            <element signature="e#21063#21487#0" />
+            <element signature="e#21231#21259#1" />
+            <element signature="e#21269#21323#0" />
+            <element signature="e#21348#21392#0" />
+            <element signature="e#21405#21464#0" />
+            <element signature="e#21491#21895#0" />
+            <element signature="e#21647#21675#1" />
+            <element signature="e#21685#21731#0" />
+            <element signature="e#21756#21800#0" />
+            <element signature="e#21813#21872#0" />
+            <element signature="e#21899#22301#0" />
+            <element signature="e#22052#22080#1" />
+            <element signature="e#22090#22137#0" />
+            <element signature="e#22162#22206#0" />
+            <element signature="e#22219#22278#0" />
+            <element signature="e#22305#22744#0" />
+            <element signature="e#22483#22511#1" />
+            <element signature="e#22521#22580#0" />
+            <element signature="e#22605#22649#0" />
+            <element signature="e#22662#22721#0" />
+            <element signature="e#22748#23166#0" />
+            <element signature="e#22911#22939#1" />
+            <element signature="e#22949#23002#0" />
+            <element signature="e#23027#23071#0" />
+            <element signature="e#23084#23143#0" />
+            <element signature="e#23170#23614#0" />
+            <element signature="e#23351#23379#1" />
+            <element signature="e#23389#23450#0" />
+            <element signature="e#23475#23519#0" />
+            <element signature="e#23532#23591#0" />
+            <element signature="e#23618#24068#0" />
+            <element signature="e#23806#23834#1" />
+            <element signature="e#23844#23904#0" />
+            <element signature="e#23929#23973#0" />
+            <element signature="e#23986#24045#0" />
+            <element signature="e#24072#24495#0" />
+            <element signature="e#24239#24267#1" />
+            <element signature="e#24277#24331#0" />
+            <element signature="e#24356#24400#0" />
+            <element signature="e#24413#24472#0" />
+            <element signature="e#24499#24954#0" />
+            <element signature="e#24687#24715#1" />
+            <element signature="e#24725#24790#0" />
+            <element signature="e#24815#24859#0" />
+            <element signature="e#24872#24931#0" />
+            <element signature="e#24958#25384#0" />
+            <element signature="e#25126#25154#1" />
+            <element signature="e#25164#25220#0" />
+            <element signature="e#25245#25289#0" />
+            <element signature="e#25302#25361#0" />
+            <element signature="e#25388#25820#0" />
+            <element signature="e#25559#25587#1" />
+            <element signature="e#25597#25656#0" />
+            <element signature="e#25681#25725#0" />
+            <element signature="e#25738#25797#0" />
+            <element signature="e#25824#26281#0" />
+            <element signature="e#26015#26043#1" />
+            <element signature="e#26053#26117#0" />
+            <element signature="e#26142#26186#0" />
+            <element signature="e#26199#26258#0" />
+            <element signature="e#26285#26754#0" />
+            <element signature="e#26481#26509#1" />
+            <element signature="e#26519#26590#0" />
+            <element signature="e#26615#26659#0" />
+            <element signature="e#26672#26731#0" />
+            <element signature="e#26758#27233#0" />
+            <element signature="e#26957#26985#1" />
+            <element signature="e#26995#27069#0" />
+            <element signature="e#27094#27138#0" />
+            <element signature="e#27151#27210#0" />
+            <element signature="e#27237#27640#0" />
+            <element signature="e#27390#27418#1" />
+            <element signature="e#27428#27476#0" />
+            <element signature="e#27501#27545#0" />
+            <element signature="e#27558#27617#0" />
+            <element signature="e#27644#28076#0" />
+            <element signature="e#27817#27845#1" />
+            <element signature="e#27855#27912#0" />
+            <element signature="e#27937#27981#0" />
+            <element signature="e#27994#28053#0" />
+            <element signature="e#28080#28497#0" />
+            <element signature="e#28248#28276#1" />
+            <element signature="e#28286#28333#0" />
+            <element signature="e#28358#28402#0" />
+            <element signature="e#28415#28474#0" />
+            <element signature="e#28501#28970#0" />
+            <element signature="e#28702#28730#1" />
+            <element signature="e#28740#28806#0" />
+            <element signature="e#28831#28875#0" />
+            <element signature="e#28888#28947#0" />
+            <element signature="e#28974#29413#0" />
+            <element signature="e#29152#29180#1" />
+            <element signature="e#29190#29249#0" />
+            <element signature="e#29274#29318#0" />
+            <element signature="e#29331#29390#0" />
+            <element signature="e#29417#29884#0" />
+            <element signature="e#29616#29644#1" />
+            <element signature="e#29654#29720#0" />
+            <element signature="e#29745#29789#0" />
+            <element signature="e#29802#29861#0" />
+            <element signature="e#29888#30361#0" />
+            <element signature="e#30090#30118#1" />
+            <element signature="e#30128#30197#0" />
+            <element signature="e#30222#30266#0" />
+            <element signature="e#30279#30338#0" />
+            <element signature="e#30365#30870#0" />
+            <element signature="e#30587#30615#1" />
+            <element signature="e#30625#30706#0" />
+            <element signature="e#30731#30775#0" />
+            <element signature="e#30788#30847#0" />
+            <element signature="e#30874#31385#0" />
+            <element signature="e#31099#31127#1" />
+            <element signature="e#31137#31221#0" />
+            <element signature="e#31246#31290#0" />
+            <element signature="e#31303#31362#0" />
+            <element signature="e#31389#31874#0" />
+            <element signature="e#31596#31624#1" />
+            <element signature="e#31634#31710#0" />
+            <element signature="e#31735#31779#0" />
+            <element signature="e#31792#31851#0" />
+            <element signature="e#31878#32369#0" />
+            <element signature="e#32088#32116#1" />
+            <element signature="e#32126#32205#0" />
+            <element signature="e#32230#32274#0" />
+            <element signature="e#32287#32346#0" />
+            <element signature="e#32373#32902#0" />
+            <element signature="e#32609#32637#1" />
+            <element signature="e#32647#32738#0" />
+            <element signature="e#32763#32807#0" />
+            <element signature="e#32820#32879#0" />
+            <element signature="e#32906#33441#0" />
+            <element signature="e#33145#33173#1" />
+            <element signature="e#33183#33277#0" />
+            <element signature="e#33302#33346#0" />
+            <element signature="e#33359#33418#0" />
+            <element signature="e#33445#33900#0" />
+            <element signature="e#33628#33656#1" />
+            <element signature="e#33666#33736#0" />
+            <element signature="e#33761#33805#0" />
+            <element signature="e#33818#33877#0" />
+            <element signature="e#33904#34367#0" />
+            <element signature="e#34094#34122#1" />
+            <element signature="e#34132#34203#0" />
+            <element signature="e#34228#34272#0" />
+            <element signature="e#34285#34344#0" />
+            <element signature="e#34371#34848#0" />
+            <element signature="e#34575#34603#1" />
+            <element signature="e#34613#34684#0" />
+            <element signature="e#34709#34753#0" />
+            <element signature="e#34766#34825#0" />
+            <element signature="e#34852#35276#0" />
+            <element signature="e#35021#35049#1" />
+            <element signature="e#35059#35112#0" />
+            <element signature="e#35137#35181#0" />
+            <element signature="e#35194#35253#0" />
+            <element signature="e#35280#35683#0" />
+            <element signature="e#35435#35463#1" />
+            <element signature="e#35473#35519#0" />
+            <element signature="e#35544#35588#0" />
+            <element signature="e#35601#35660#0" />
+            <element signature="e#35687#36097#0" />
+            <element signature="e#35848#35876#1" />
+            <element signature="e#35886#35934#0" />
+            <element signature="e#35959#36002#0" />
+            <element signature="e#36015#36074#0" />
+            <element signature="e#36101#36504#0" />
+            <element signature="e#36257#36285#1" />
+            <element signature="e#36295#36341#0" />
+            <element signature="e#36366#36409#0" />
+            <element signature="e#36422#36481#0" />
+            <element signature="e#36508#36933#0" />
+            <element signature="e#36675#36703#1" />
+            <element signature="e#36713#36770#0" />
+            <element signature="e#36795#36838#0" />
+            <element signature="e#36851#36910#0" />
+            <element signature="e#36937#37369#0" />
+            <element signature="e#37108#37136#1" />
+            <element signature="e#37146#37206#0" />
+            <element signature="e#37231#37274#0" />
+            <element signature="e#37287#37346#0" />
+            <element signature="e#37373#37770#0" />
+            <element signature="e#37524#37552#1" />
+            <element signature="e#37562#37607#0" />
+            <element signature="e#37632#37675#0" />
+            <element signature="e#37688#37747#0" />
+            <element signature="e#37774#38202#0" />
+            <element signature="e#37946#37974#1" />
+            <element signature="e#37984#38039#0" />
+            <element signature="e#38064#38107#0" />
+            <element signature="e#38120#38179#0" />
+            <element signature="e#38206#38630#0" />
+            <element signature="e#38373#38401#1" />
+            <element signature="e#38411#38466#0" />
+            <element signature="e#38491#38535#0" />
+            <element signature="e#38548#38607#0" />
+            <element signature="e#38634#39084#0" />
+            <element signature="e#38818#38846#1" />
+            <element signature="e#38856#38920#0" />
+            <element signature="e#38945#38989#0" />
+            <element signature="e#39002#39061#0" />
+            <element signature="e#39088#39516#0" />
+            <element signature="e#39256#39284#1" />
+            <element signature="e#39294#39352#0" />
+            <element signature="e#39377#39421#0" />
+            <element signature="e#39434#39493#0" />
+            <element signature="e#39520#39921#0" />
+            <element signature="e#39672#39700#1" />
+            <element signature="e#39710#39757#0" />
+            <element signature="e#39782#39826#0" />
+            <element signature="e#39839#39898#0" />
+            <element signature="e#39925#40353#0" />
+            <element signature="e#40093#40121#1" />
+            <element signature="e#40131#40189#0" />
+            <element signature="e#40214#40258#0" />
+            <element signature="e#40271#40330#0" />
+            <element signature="e#40357#40758#0" />
+            <element signature="e#40509#40537#1" />
+            <element signature="e#40547#40594#0" />
+            <element signature="e#40619#40663#0" />
+            <element signature="e#40676#40735#0" />
+            <element signature="e#40762#41188#0" />
+            <element signature="e#40930#40958#1" />
+            <element signature="e#40968#41024#0" />
+            <element signature="e#41049#41093#0" />
+            <element signature="e#41106#41165#0" />
+            <element signature="e#41192#41631#0" />
+            <element signature="e#41370#41398#1" />
+            <element signature="e#41408#41468#0" />
+            <element signature="e#41493#41536#0" />
+            <element signature="e#41549#41608#0" />
+            <element signature="e#41635#42076#0" />
+            <element signature="e#41815#41843#1" />
+            <element signature="e#41853#41913#0" />
+            <element signature="e#41938#41981#0" />
+            <element signature="e#41994#42053#0" />
+            <element signature="e#42080#42504#0" />
+            <element signature="e#42250#42278#1" />
+            <element signature="e#42288#42341#0" />
+            <element signature="e#42366#42409#0" />
+            <element signature="e#42422#42481#0" />
+            <element signature="e#42508#42953#0" />
+            <element signature="e#42690#42718#1" />
+            <element signature="e#42728#42790#0" />
+            <element signature="e#42815#42858#0" />
+            <element signature="e#42871#42930#0" />
+            <element signature="e#42957#43394#0" />
+            <element signature="e#43140#43168#1" />
+            <element signature="e#43178#43231#0" />
+            <element signature="e#43256#43299#0" />
+            <element signature="e#43312#43371#0" />
+            <element signature="e#43398#43843#0" />
+            <element signature="e#43585#43613#1" />
+            <element signature="e#43623#43678#0" />
+            <element signature="e#43703#43748#0" />
+            <element signature="e#43761#43820#0" />
+            <element signature="e#43847#44294#0" />
+            <element signature="e#44028#44056#1" />
+            <element signature="e#44066#44129#0" />
+            <element signature="e#44154#44199#0" />
+            <element signature="e#44212#44271#0" />
+            <element signature="e#44298#44732#0" />
+            <element signature="e#44474#44502#1" />
+            <element signature="e#44512#44569#0" />
+            <element signature="e#44594#44637#0" />
+            <element signature="e#44650#44709#0" />
+            <element signature="e#44736#45156#0" />
+            <element signature="e#44902#44930#1" />
+            <element signature="e#44940#44993#0" />
+            <element signature="e#45018#45061#0" />
+            <element signature="e#45074#45133#0" />
+            <element signature="e#45160#45559#0" />
+            <element signature="e#45312#45340#1" />
+            <element signature="e#45350#45396#0" />
+            <element signature="e#45421#45464#0" />
+            <element signature="e#45477#45536#0" />
+            <element signature="e#45563#45978#0" />
+            <element signature="e#45730#45758#1" />
+            <element signature="e#45768#45815#0" />
+            <element signature="e#45840#45883#0" />
+            <element signature="e#45896#45955#0" />
+            <element signature="e#45982#46411#0" />
+            <element signature="e#46163#46191#1" />
+            <element signature="e#46201#46248#0" />
+            <element signature="e#46273#46316#0" />
+            <element signature="e#46329#46388#0" />
+            <element signature="e#46415#46850#0" />
+            <element signature="e#46600#46628#1" />
+            <element signature="e#46638#46687#0" />
+            <element signature="e#46712#46755#0" />
+            <element signature="e#46768#46827#0" />
+            <element signature="e#46854#47281#0" />
+            <element signature="e#47022#47050#1" />
+            <element signature="e#47060#47116#0" />
+            <element signature="e#47141#47186#0" />
+            <element signature="e#47199#47258#0" />
+            <element signature="e#47285#47712#0" />
+            <element signature="e#47453#47481#1" />
+            <element signature="e#47491#47547#0" />
+            <element signature="e#47572#47617#0" />
+            <element signature="e#47630#47689#0" />
+            <element signature="e#47716#48118#0" />
+            <element signature="e#47868#47896#1" />
+            <element signature="e#47906#47953#0" />
+            <element signature="e#47978#48023#0" />
+            <element signature="e#48036#48095#0" />
+            <element signature="e#48122#48576#0" />
+            <element signature="e#48312#48340#1" />
+            <element signature="e#48350#48411#0" />
+            <element signature="e#48436#48481#0" />
+            <element signature="e#48494#48553#0" />
+            <element signature="e#48580#49019#0" />
+            <element signature="e#48757#48785#1" />
+            <element signature="e#48795#48855#0" />
+            <element signature="e#48880#48924#0" />
+            <element signature="e#48937#48996#0" />
+            <element signature="e#49023#49451#0" />
+            <element signature="e#49192#49220#1" />
+            <element signature="e#49230#49286#0" />
+            <element signature="e#49311#49356#0" />
+            <element signature="e#49369#49428#0" />
+            <element signature="e#49455#49900#0" />
+            <element signature="e#49636#49664#1" />
+            <element signature="e#49674#49735#0" />
+            <element signature="e#49760#49805#0" />
+            <element signature="e#49818#49877#0" />
+            <element signature="e#49904#50345#0" />
+            <element signature="e#50081#50109#1" />
+            <element signature="e#50119#50180#0" />
+            <element signature="e#50205#50250#0" />
+            <element signature="e#50263#50322#0" />
+            <element signature="e#50349#50755#0" />
+            <element signature="e#50505#50533#1" />
+            <element signature="e#50543#50590#0" />
+            <element signature="e#50615#50660#0" />
+            <element signature="e#50673#50732#0" />
+            <element signature="e#50759#51165#0" />
+            <element signature="e#50915#50943#1" />
+            <element signature="e#50953#51000#0" />
+            <element signature="e#51025#51070#0" />
+            <element signature="e#51083#51142#0" />
+            <element signature="e#51169#51594#0" />
+            <element signature="e#51336#51364#1" />
+            <element signature="e#51374#51429#0" />
+            <element signature="e#51454#51499#0" />
+            <element signature="e#51512#51571#0" />
+            <element signature="e#51598#52022#0" />
+            <element signature="e#51768#51796#1" />
+            <element signature="e#51806#51857#0" />
+            <element signature="e#51882#51927#0" />
+            <element signature="e#51940#51999#0" />
+            <element signature="e#52026#52451#0" />
+            <element signature="e#52193#52221#1" />
+            <element signature="e#52231#52286#0" />
+            <element signature="e#52311#52356#0" />
+            <element signature="e#52369#52428#0" />
+            <element signature="e#52455#52861#0" />
+            <element signature="e#52611#52639#1" />
+            <element signature="e#52649#52696#0" />
+            <element signature="e#52721#52766#0" />
+            <element signature="e#52779#52838#0" />
+            <element signature="e#52865#53266#0" />
+            <element signature="e#53018#53046#1" />
+            <element signature="e#53056#53103#0" />
+            <element signature="e#53128#53171#0" />
+            <element signature="e#53184#53243#0" />
+            <element signature="e#53270#53709#0" />
+            <element signature="e#53449#53477#1" />
+            <element signature="e#53487#53546#0" />
+            <element signature="e#53571#53614#0" />
+            <element signature="e#53627#53686#0" />
+            <element signature="e#53713#54130#0" />
+            <element signature="e#53876#53904#1" />
+            <element signature="e#53914#53967#0" />
+            <element signature="e#53992#54035#0" />
+            <element signature="e#54048#54107#0" />
+            <element signature="e#54134#54577#0" />
+            <element signature="e#54315#54343#1" />
+            <element signature="e#54353#54414#0" />
+            <element signature="e#54439#54482#0" />
+            <element signature="e#54495#54554#0" />
+            <element signature="e#54581#55030#0" />
+            <element signature="e#54769#54797#1" />
+            <element signature="e#54807#54867#0" />
+            <element signature="e#54892#54935#0" />
+            <element signature="e#54948#55007#0" />
+            <element signature="e#55034#55456#0" />
+            <element signature="e#55201#55229#1" />
+            <element signature="e#55239#55293#0" />
+            <element signature="e#55318#55361#0" />
+            <element signature="e#55374#55433#0" />
+            <element signature="e#55460#55913#0" />
+            <element signature="e#55648#55676#1" />
+            <element signature="e#55686#55750#0" />
+            <element signature="e#55775#55818#0" />
+            <element signature="e#55831#55890#0" />
+            <element signature="e#55917#56341#0" />
+            <element signature="e#56085#56113#1" />
+            <element signature="e#56123#56178#0" />
+            <element signature="e#56203#56246#0" />
+            <element signature="e#56259#56318#0" />
+            <element signature="e#56345#56775#0" />
+            <element signature="e#56516#56544#1" />
+            <element signature="e#56554#56612#0" />
+            <element signature="e#56637#56680#0" />
+            <element signature="e#56693#56752#0" />
+            <element signature="e#56779#57234#0" />
+            <element signature="e#56970#56998#1" />
+            <element signature="e#57008#57071#0" />
+            <element signature="e#57096#57139#0" />
+            <element signature="e#57152#57211#0" />
+            <element signature="e#57238#57705#0" />
+            <element signature="e#57434#57462#1" />
+            <element signature="e#57472#57542#0" />
+            <element signature="e#57567#57610#0" />
+            <element signature="e#57623#57682#0" />
+            <element signature="e#57709#58182#0" />
+            <element signature="e#57908#57936#1" />
+            <element signature="e#57946#58019#0" />
+            <element signature="e#58044#58087#0" />
+            <element signature="e#58100#58159#0" />
+            <element signature="e#58186#58587#0" />
+            <element signature="e#58339#58367#1" />
+            <element signature="e#58377#58424#0" />
+            <element signature="e#58449#58492#0" />
+            <element signature="e#58505#58564#0" />
+            <element signature="e#58591#59021#0" />
+            <element signature="e#58764#58792#1" />
+            <element signature="e#58802#58858#0" />
+            <element signature="e#58883#58926#0" />
+            <element signature="e#58939#58998#0" />
+            <element signature="e#59025#59440#0" />
+            <element signature="e#59193#59221#1" />
+            <element signature="e#59231#59277#0" />
+            <element signature="e#59302#59345#0" />
+            <element signature="e#59358#59417#0" />
+            <element signature="e#59444#59911#0" />
+            <element signature="e#59645#59673#1" />
+            <element signature="e#59683#59748#0" />
+            <element signature="e#59773#59816#0" />
+            <element signature="e#59829#59888#0" />
+            <element signature="e#59915#60352#0" />
+            <element signature="e#60093#60121#1" />
+            <element signature="e#60131#60189#0" />
+            <element signature="e#60214#60257#0" />
+            <element signature="e#60270#60329#0" />
+            <element signature="e#60356#60821#0" />
+            <element signature="e#60555#60583#1" />
+            <element signature="e#60593#60658#0" />
+            <element signature="e#60683#60726#0" />
+            <element signature="e#60739#60798#0" />
+            <element signature="e#60825#61328#0" />
+            <element signature="e#61047#61075#1" />
+            <element signature="e#61085#61165#0" />
+            <element signature="e#61190#61233#0" />
+            <element signature="e#61246#61305#0" />
+            <element signature="e#61332#61815#0" />
+            <element signature="e#61539#61567#1" />
+            <element signature="e#61577#61652#0" />
+            <element signature="e#61677#61720#0" />
+            <element signature="e#61733#61792#0" />
+            <element signature="e#61819#62346#0" />
+            <element signature="e#62055#62083#1" />
+            <element signature="e#62093#62183#0" />
+            <element signature="e#62208#62251#0" />
+            <element signature="e#62264#62323#0" />
+            <element signature="e#62350#62821#0" />
+            <element signature="e#62552#62580#1" />
+            <element signature="e#62590#62658#0" />
+            <element signature="e#62683#62726#0" />
+            <element signature="e#62739#62798#0" />
+            <element signature="e#62825#63334#0" />
+            <element signature="e#63050#63078#1" />
+            <element signature="e#63088#63171#0" />
+            <element signature="e#63196#63239#0" />
+            <element signature="e#63252#63311#0" />
+            <element signature="e#63338#63827#0" />
+            <element signature="e#63548#63576#1" />
+            <element signature="e#63586#63664#0" />
+            <element signature="e#63689#63732#0" />
+            <element signature="e#63745#63804#0" />
+            <element signature="e#63831#64364#0" />
+            <element signature="e#64070#64098#1" />
+            <element signature="e#64108#64201#0" />
+            <element signature="e#64226#64269#0" />
+            <element signature="e#64282#64341#0" />
+            <element signature="e#64368#64821#0" />
+            <element signature="e#64551#64579#1" />
+            <element signature="e#64589#64658#0" />
+            <element signature="e#64683#64726#0" />
+            <element signature="e#64739#64798#0" />
+            <element signature="e#64825#65286#0" />
+            <element signature="e#65015#65043#1" />
+            <element signature="e#65053#65123#0" />
+            <element signature="e#65148#65191#0" />
+            <element signature="e#65204#65263#0" />
+            <element signature="e#65290#65765#0" />
+            <element signature="e#65494#65522#1" />
+            <element signature="e#65532#65602#0" />
+            <element signature="e#65627#65670#0" />
+            <element signature="e#65683#65742#0" />
+            <element signature="e#65769#66178#0" />
+            <element signature="e#65927#65955#1" />
+            <element signature="e#65965#66015#0" />
+            <element signature="e#66040#66083#0" />
+            <element signature="e#66096#66155#0" />
+            <element signature="e#66182#66591#0" />
+            <element signature="e#66340#66368#1" />
+            <element signature="e#66378#66428#0" />
+            <element signature="e#66453#66496#0" />
+            <element signature="e#66509#66568#0" />
+            <element signature="e#66595#67030#0" />
+            <element signature="e#66775#66803#1" />
+            <element signature="e#66813#66867#0" />
+            <element signature="e#66892#66935#0" />
+            <element signature="e#66948#67007#0" />
+            <element signature="e#67034#67469#0" />
+            <element signature="e#67214#67242#1" />
+            <element signature="e#67252#67306#0" />
+            <element signature="e#67331#67374#0" />
+            <element signature="e#67387#67446#0" />
+            <element signature="e#67473#67886#0" />
+            <element signature="e#67634#67662#1" />
+            <element signature="e#67672#67723#0" />
+            <element signature="e#67748#67791#0" />
+            <element signature="e#67804#67863#0" />
+            <element signature="e#67890#68342#0" />
+            <element signature="e#68087#68115#1" />
+            <element signature="e#68125#68179#0" />
+            <element signature="e#68204#68247#0" />
+            <element signature="e#68260#68319#0" />
+            <element signature="e#68346#68774#0" />
+            <element signature="e#68522#68550#1" />
+            <element signature="e#68560#68611#0" />
+            <element signature="e#68636#68679#0" />
+            <element signature="e#68692#68751#0" />
+            <element signature="e#68778#68830#0" />
+            <element signature="e#68960#69446#0" />
+            <element signature="e#69012#69065#0" />
+            <element signature="e#69075#69373#1" />
+            <element signature="e#69162#69282#1" />
+            <element signature="e#69296#69365#1" />
+            <element signature="e#69459#69518#0" />
+            <element signature="e#69544#69596#0" />
+            <element signature="e#69544#70293#0" />
+            <element signature="e#69730#70199#0" />
+            <element signature="e#69782#69835#0" />
+            <element signature="e#69845#70126#1" />
+            <element signature="e#70001#70035#1" />
+            <element signature="e#70049#70118#1" />
+            <element signature="e#70212#70271#0" />
+            <element signature="e#70297#70593#0" />
+            <element signature="e#70409#70449#0" />
+            <element signature="e#70474#70517#0" />
+            <element signature="e#70530#70589#0" />
+            <element signature="e#70598#70708#0" />
+            <element signature="e#70712#71191#0" />
+            <element signature="e#70860#71047#0" />
+            <element signature="e#70972#71041#1" />
+            <element signature="e#71072#71115#0" />
+            <element signature="e#71128#71187#0" />
+            <element signature="e#71195#71726#0" />
+            <element signature="e#71349#71377#1" />
+            <element signature="e#71387#71562#0" />
+            <element signature="e#71469#71537#1" />
+            <element signature="e#71587#71630#0" />
+            <element signature="e#71643#71702#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../projects/mvn-conf/repository/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Jedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="2685" column="14" selection-start-line="2685" selection-start-column="14" selection-end-line="2685" selection-end-column="14" />
+          <folding>
+            <element signature="e#126342#126343#0" expanded="true" />
+            <element signature="e#126379#126380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/niu/springbootredis/pubsub/WeatherServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="29" selection-start-line="29" selection-start-column="1" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELP.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-86" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/PubsubTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageRankTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
