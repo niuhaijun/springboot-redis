@@ -10,7 +10,7 @@
   * 存储数据库特定字段或JSON对象
   * 分布式锁
   * 常用的命令
-    * set、setnx、getset、get
+    * set、setnx、get、getset
     * incr、incrby
     * decr、decrby
     * [string命令文档](https://www.redis.net.cn/order/3552.html)
