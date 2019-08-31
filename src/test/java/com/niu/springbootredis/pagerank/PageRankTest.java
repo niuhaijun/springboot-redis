@@ -22,7 +22,7 @@ import redis.clients.jedis.Tuple;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PageTest {
+public class PageRankTest {
 
   @Autowired
   private RedisClientTemplate redisClientTemplate;
@@ -32,16 +32,15 @@ public class PageTest {
 
     List<Account> list = new ArrayList<>();
 
-    list.add(new Account(null, "0", BigDecimal.valueOf(0), 1l));// 9
-    list.add(new Account(null, "1", BigDecimal.valueOf(1), 1l));// 8
-    list.add(new Account(null, "2", BigDecimal.valueOf(2), 1l));// 7
-    list.add(new Account(null, "3", BigDecimal.valueOf(3), 1l));// 6
-    list.add(new Account(null, "4", BigDecimal.valueOf(4), 1l));// 5
-    list.add(new Account(null, "5", BigDecimal.valueOf(5), 1l));// 4
-    list.add(new Account(null, "6", BigDecimal.valueOf(6), 1l));// 3
-    list.add(new Account(null, "7", BigDecimal.valueOf(7), 1l));// 2
-    list.add(new Account(null, "8", BigDecimal.valueOf(8), 1l));// 1
-    list.add(new Account(null, "9", BigDecimal.valueOf(9), 1l));// 0
+    list.add(new Account(null, "1", BigDecimal.valueOf(1), 1l));// 9
+    list.add(new Account(null, "2", BigDecimal.valueOf(2), 1l));// 8
+    list.add(new Account(null, "3", BigDecimal.valueOf(3), 1l));// 7
+    list.add(new Account(null, "4", BigDecimal.valueOf(4), 1l));// 6
+    list.add(new Account(null, "5", BigDecimal.valueOf(5), 1l));// 5
+    list.add(new Account(null, "6", BigDecimal.valueOf(6), 1l));// 4
+    list.add(new Account(null, "7", BigDecimal.valueOf(7), 1l));// 3
+    list.add(new Account(null, "8", BigDecimal.valueOf(8), 1l));// 2
+    list.add(new Account(null, "9", BigDecimal.valueOf(9), 1l));// 1
 
     String key = "ppcoin:paihangbang";
     String addressPre = key + ":address:";
@@ -71,12 +70,11 @@ public class PageTest {
     // zrevrange key start end withscores
     Set<Tuple> set = redisClientTemplate.zrevrangeWithScores(key, start, end);
     for (Tuple tuple : set) {
-      String member = tuple.getElement();
-
-      // zrevrank key member 获取逆序排名， 从0开始
-      Long rank = redisClientTemplate.zrevrank(key, member) + 1;
       String address = tuple.getElement();
       double balance = tuple.getScore();
+
+      // zrevrank key member 获取逆序排名， 从0开始
+      Long rank = redisClientTemplate.zrevrank(key, address) + 1;
       String txCount = redisClientTemplate.get(addressPre + address);
 
       Account account = new Account();
