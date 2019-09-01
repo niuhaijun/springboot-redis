@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea2e154-91e5-4f25-9723-cbefbf546041" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/缓存问题以及解决方案.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/缓存问题以及解决方案.md" beforeDir="false" afterPath="$PROJECT_DIR$/缓存问题以及解决方案.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,8 +26,8 @@
         <entry file="file://$PROJECT_DIR$/缓存问题以及解决方案.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="380">
-                <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <first_editor relative-caret-position="363">
+                <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               </first_editor>
               <second_editor />
             </state>
@@ -148,8 +148,8 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="392" />
-    <option name="y" value="556" />
+    <option name="x" value="284" />
+    <option name="y" value="594" />
     <option name="width" value="2251" />
     <option name="height" value="985" />
   </component>
@@ -316,7 +316,7 @@
       <workItem from="1567132351684" duration="2056000" />
       <workItem from="1567159191582" duration="1735000" />
       <workItem from="1567216763180" duration="137000" />
-      <workItem from="1567216978049" duration="37126000" />
+      <workItem from="1567216978049" duration="37858000" />
     </task>
     <servers />
   </component>
@@ -353,7 +353,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83651000" />
+    <option name="totallyTimeSpent" value="84383000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,10 +365,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="392" y="556" width="2251" height="985" extended-state="0" />
+    <frame x="284" y="594" width="2251" height="985" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13324238" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13324238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -384,7 +384,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49958983" weight="0.29633868" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49958983" visible="true" weight="0.29633868" />
       <window_info anchor="bottom" id="Docker" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5004102" side_tool="true" weight="0.29689297" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -1718,8 +1718,8 @@
     <entry file="file://$PROJECT_DIR$/缓存问题以及解决方案.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="380">
-            <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <first_editor relative-caret-position="363">
+            <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
