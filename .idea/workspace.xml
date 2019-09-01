@@ -26,7 +26,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="487">
-                <caret line="34" selection-start-line="34" selection-end-line="34" />
+                <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
               </first_editor>
               <second_editor />
             </state>
@@ -116,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/rank/Rank.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/过期键与持久化.md" />
+        <option value="$PROJECT_DIR$/事务.md" />
         <option value="$PROJECT_DIR$/发布与订阅.md" />
       </list>
     </option>
@@ -321,7 +322,7 @@
       <workItem from="1567132351684" duration="2056000" />
       <workItem from="1567159191582" duration="1735000" />
       <workItem from="1567216763180" duration="137000" />
-      <workItem from="1567216978049" duration="24271000" />
+      <workItem from="1567216978049" duration="25426000" />
     </task>
     <servers />
   </component>
@@ -358,7 +359,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70796000" />
+    <option name="totallyTimeSpent" value="71951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +390,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.43893412" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.43828017" />
       <window_info anchor="bottom" id="Docker" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -1713,7 +1714,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="487">
-            <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
           </first_editor>
           <second_editor />
         </state>
