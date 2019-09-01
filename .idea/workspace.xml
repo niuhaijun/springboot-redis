@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea2e154-91e5-4f25-9723-cbefbf546041" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/事务.md" beforeDir="false" afterPath="$PROJECT_DIR$/事务.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/过期键与持久化.md" beforeDir="false" afterPath="$PROJECT_DIR$/过期键与持久化.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,56 +20,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/过期键的删除策略.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="171">
-                <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/发布与订阅.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="544">
-                <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/过期键与持久化.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="374">
-                <caret line="63" column="73" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/事务.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="991">
-                <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,8 +93,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/niu/springbootredis/rank/Rank.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/发布与订阅.md" />
-        <option value="$PROJECT_DIR$/过期键与持久化.md" />
         <option value="$PROJECT_DIR$/事务.md" />
+        <option value="$PROJECT_DIR$/过期键与持久化.md" />
       </list>
     </option>
   </component>
@@ -180,9 +130,9 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="467" />
-    <option name="y" value="519" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="267" />
+    <option name="y" value="362" />
     <option name="width" value="2199" />
     <option name="height" value="832" />
   </component>
@@ -349,7 +299,7 @@
       <workItem from="1567132351684" duration="2056000" />
       <workItem from="1567159191582" duration="1735000" />
       <workItem from="1567216763180" duration="137000" />
-      <workItem from="1567216978049" duration="31032000" />
+      <workItem from="1567216978049" duration="31597000" />
     </task>
     <servers />
   </component>
@@ -386,7 +336,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77557000" />
+    <option name="totallyTimeSpent" value="78122000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -398,10 +348,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <frame x="267" y="362" width="2199" height="832" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16666667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19469027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -417,7 +366,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13545522" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.13545522" />
       <window_info anchor="bottom" id="Docker" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -1732,8 +1681,8 @@
     <entry file="file://$PROJECT_DIR$/过期键与持久化.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="374">
-            <caret line="63" column="73" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
+          <first_editor relative-caret-position="525">
+            <caret line="111" column="49" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>
@@ -1742,8 +1691,8 @@
     <entry file="file://$PROJECT_DIR$/事务.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="991">
-            <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <first_editor relative-caret-position="315">
+            <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
