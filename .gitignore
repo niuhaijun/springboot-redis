@@ -1,4 +1,4 @@
 /target/
 .mvn
 springboot-redis.iml
-.idea
+.idea/
