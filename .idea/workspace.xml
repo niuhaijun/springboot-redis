@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea2e154-91e5-4f25-9723-cbefbf546041" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/过期键与持久化.md" beforeDir="false" afterPath="$PROJECT_DIR$/过期键与持久化.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/过期键的删除策略.md" beforeDir="false" afterPath="$PROJECT_DIR$/过期键的删除策略.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,7 +22,32 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/过期键的删除策略.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="282">
+                <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/过期键与持久化.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="282">
+                <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,7 +102,6 @@
         <option value="$PROJECT_DIR$/Redis对象的适用场景.md" />
         <option value="$PROJECT_DIR$/字典数据结构.md" />
         <option value="$PROJECT_DIR$/Redis数据库.md" />
-        <option value="$PROJECT_DIR$/过期键的删除策略.md" />
         <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pagerank/PageRankTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/niu/springbootredis/pubsub/Subscriber.java" />
@@ -95,6 +121,7 @@
         <option value="$PROJECT_DIR$/发布与订阅.md" />
         <option value="$PROJECT_DIR$/事务.md" />
         <option value="$PROJECT_DIR$/过期键与持久化.md" />
+        <option value="$PROJECT_DIR$/过期键的删除策略.md" />
       </list>
     </option>
   </component>
@@ -131,10 +158,10 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="267" />
-    <option name="y" value="362" />
-    <option name="width" value="2199" />
-    <option name="height" value="832" />
+    <option name="x" value="143" />
+    <option name="y" value="452" />
+    <option name="width" value="2490" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -299,7 +326,7 @@
       <workItem from="1567132351684" duration="2056000" />
       <workItem from="1567159191582" duration="1735000" />
       <workItem from="1567216763180" duration="137000" />
-      <workItem from="1567216978049" duration="31597000" />
+      <workItem from="1567216978049" duration="33309000" />
     </task>
     <servers />
   </component>
@@ -336,7 +363,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78122000" />
+    <option name="totallyTimeSpent" value="79834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,9 +375,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="267" y="362" width="2199" height="832" extended-state="0" />
+    <frame x="143" y="452" width="2490" height="980" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19469027" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19469027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -366,7 +394,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.13545522" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29689297" />
       <window_info anchor="bottom" id="Docker" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -1667,12 +1695,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/过期键的删除策略.md">
-      <provider editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/事务.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="171">
-            <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <first_editor relative-caret-position="315">
+            <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -1681,18 +1708,19 @@
     <entry file="file://$PROJECT_DIR$/过期键与持久化.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="525">
-            <caret line="111" column="49" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+          <first_editor relative-caret-position="282">
+            <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/事务.md">
+    <entry file="file://$PROJECT_DIR$/过期键的删除策略.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <first_editor relative-caret-position="282">
+            <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
