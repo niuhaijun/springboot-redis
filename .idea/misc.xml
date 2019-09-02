@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Kotlin2JsCompilerArguments">
-    <option name="sourceMapEmbedSources" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -10,21 +8,23 @@
       </list>
     </option>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="niu" />
+  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
         <expanded-state>
-          <State />
           <State>
-            <id>General</id>
+            <id />
           </State>
           <State>
-            <id>Plugin DevKit</id>
+            <id>General</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>RedundantSuppression</id>
+            <id>Duplicates</id>
           </State>
         </selected-state>
       </profile-state>
