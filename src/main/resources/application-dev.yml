@@ -1,4 +1,7 @@
 spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
   datasource:
     name: spring_boot_redis
     type: com.zaxxer.hikari.HikariDataSource
@@ -48,3 +51,4 @@ jedis:
   maxWaitMillis: -1
   # 超时时间（毫秒）
   timeout: 10000
+
